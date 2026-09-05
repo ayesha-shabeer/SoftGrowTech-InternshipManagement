@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — SoftGrowTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <!-- Left Hero Split Screen -->
+    <div class="auth-sidebar-hero">
+      <a href="index.html" class="brand-logo" style="color: #FFFFFF;">
+        <div class="brand-icon" style="background: rgba(255,255,255,0.25); box-shadow: none;">
+          <i data-lucide="layers" style="width: 20px; height: 20px; color: #FFFFFF;"></i>
+        </div>
+        <span style="color: #FFFFFF; font-size: 1.25rem;">SoftGrowTech</span>
+      </a>
+
+      <div class="auth-hero-content">
+        <h1 class="auth-hero-title">Welcome back to your workspace</h1>
+        <p class="auth-hero-text">
+          Sign in with your Student ID, Name, or Email to access your assigned tasks and track evaluations in real time.
+        </p>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature-item">
+            <div class="icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+            <span>Instant task assignment sync & deadlines</span>
+          </div>
+          <div class="auth-feature-item">
+            <div class="icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+            <span>One-click GitHub & repository submission</span>
+          </div>
+          <div class="auth-feature-item">
+            <div class="icon"><i data-lucide="check" style="width: 14px; height: 14px;"></i></div>
+            <span>Detailed mentor scorecards and feedback</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">
+        "Manage your internship. Track your growth."
+      </div>
+    </div>
+
+    <!-- Right Login Card Form -->
+    <div class="auth-form-container">
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+        <button class="icon-btn theme-toggle-btn" aria-label="Toggle theme">
+          <span class="theme-icon-moon"><i data-lucide="moon" style="width: 18px; height: 18px;"></i></span>
+          <span class="theme-icon-sun" style="display: none;"><i data-lucide="sun" style="width: 18px; height: 18px;"></i></span>
+        </button>
+      </div>
+
+      <div class="auth-form-card">
+        <div class="auth-header">
+          <h2>Sign in to SoftGrowTech</h2>
+          <p>Use your Student ID, Name, or Email Address to login</p>
+        </div>
+
+        <!-- Demo Credentials Helper Banner -->
+        <div class="demo-credentials-box">
+          <div>
+            <strong>Demo Login Credentials:</strong><br>
+            <span style="color: var(--text-muted); font-size: 0.78rem;">
+              Student ID: <strong>INT-2026-WD01</strong> or Name: <strong>Sarah Ahmed</strong><br>
+              Password: <strong>password123</strong>
+            </span>
+          </div>
+          <button type="button" id="btn-fill-demo" class="btn btn-primary btn-sm" style="font-size: 0.75rem; padding: 4px 10px; margin-left: 8px; flex-shrink: 0;">
+            Auto-Fill
+          </button>
+        </div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="login-identifier">Student ID, Name, or Email</label>
+            <input type="text" id="login-identifier" class="form-input" placeholder="e.g. INT-2026-WD01, Sarah Ahmed, or email" required autocomplete="username">
+            <span class="form-hint">Supports alphanumeric characters, uppercase, lowercase, and hyphens (-)</span>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">
+              <label for="login-password">Password</label>
+              <a href="#" id="forgot-password-link" style="font-size: 0.8rem; font-weight: 500;">Forgot password?</a>
+            </div>
+            <div class="input-password-wrapper">
+              <input type="password" id="login-password" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="toggle-password-btn" aria-label="Toggle password visibility">
+                <i data-lucide="eye" id="eye-icon" style="width: 18px; height: 18px;"></i>
+              </button>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="remember-me-check" checked>
+              <span>Remember me for 30 days</span>
+            </label>
+          </div>
+
+          <button type="submit" id="login-submit-btn" class="btn btn-primary btn-full btn-lg">
+            <span>Sign In</span>
+            <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 28px; font-size: 0.9rem; color: var(--text-muted);">
+          Don't have an account? 
+          <a href="register.html" style="font-weight: 600; color: var(--primary);">Create account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Redirect if already logged in
+      Auth.redirectIfAuth();
+
+      const form = document.getElementById('login-form');
+      const identifierInput = document.getElementById('login-identifier');
+      const passInput = document.getElementById('login-password');
+      const fillDemoBtn = document.getElementById('btn-fill-demo');
+      const togglePassBtn = document.getElementById('toggle-password-btn');
+      const eyeIcon = document.getElementById('eye-icon');
+      const forgotPassLink = document.getElementById('forgot-password-link');
+
+      // Auto-fill demo
+      if (fillDemoBtn) {
+        fillDemoBtn.addEventListener('click', () => {
+          identifierInput.value = 'INT-2026-WD01';
+          passInput.value = 'password123';
+          App.showToast('Loaded Demo Student ID (INT-2026-WD01)!', 'info');
+        });
+      }
+
+      // Password toggle
+      if (togglePassBtn) {
+        togglePassBtn.addEventListener('click', () => {
+          const isPassword = passInput.type === 'password';
+          passInput.type = isPassword ? 'text' : 'password';
+          eyeIcon.setAttribute('data-lucide', isPassword ? 'eye-off' : 'eye');
+          if (window.lucide) lucide.createIcons();
+        });
+      }
+
+      // Forgot password hint
+      if (forgotPassLink) {
+        forgotPassLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          App.showToast('Demo reset: Default password is "password123"', 'info', 'Password Recovery');
+        });
+      }
+
+      // Login form handler
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const identifier = identifierInput.value.trim();
+          const pass = passInput.value;
+          const submitBtn = document.getElementById('login-submit-btn');
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>Signing In...</span>`;
+
+          setTimeout(() => {
+            const result = Auth.login(identifier, pass);
+            if (result.success) {
+              App.showToast(`Welcome back, ${result.user.name} (${result.user.studentId || 'Intern'})!`, 'success', 'Login Successful');
+              setTimeout(() => {
+                window.location.href = 'dashboard.html';
+              }, 600);
+            } else {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = `<span>Sign In</span> <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>`;
+              if (window.lucide) lucide.createIcons();
+              App.showToast(result.message, 'error', 'Authentication Failed');
+            }
+          }, 400);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
