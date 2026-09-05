@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship Progress & Growth — SoftGrowTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand-logo">
+          <div class="brand-icon">
+            <i data-lucide="layers" style="width: 20px; height: 20px;"></i>
+          </div>
+          <span>SoftGrowTech</span>
+          <span class="brand-tag">PRO</span>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div>
+          <div class="nav-group-title">Main Menu</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="dashboard.html"><i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i><span>Dashboard</span></a></li>
+            <li class="nav-item"><a href="tasks.html"><i data-lucide="check-square" style="width: 18px; height: 18px;"></i><span>My Tasks</span></a></li>
+            <li class="nav-item"><a href="submit.html"><i data-lucide="upload-cloud" style="width: 18px; height: 18px;"></i><span>Submit Work</span></a></li>
+            <li class="nav-item"><a href="submissions.html"><i data-lucide="folder-check" style="width: 18px; height: 18px;"></i><span>Submissions</span></a></li>
+            <li class="nav-item active"><a href="progress.html"><i data-lucide="trending-up" style="width: 18px; height: 18px;"></i><span>Progress</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-group-title">Account</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="profile.html"><i data-lucide="user" style="width: 18px; height: 18px;"></i><span>Profile</span></a></li>
+            <li class="nav-item"><a href="settings.html"><i data-lucide="settings" style="width: 18px; height: 18px;"></i><span>Settings</span></a></li>
+            <li class="nav-item"><a href="#" class="btn-logout" style="color: var(--danger);"><i data-lucide="log-out" style="width: 18px; height: 18px; color: var(--danger);"></i><span>Logout</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-profile">
+          <div class="avatar-wrapper">
+            <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+            <span class="status-dot"></span>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name user-name-display">Sarah Ahmed</div>
+            <div class="profile-role user-role-display">Frontend Intern</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-layout">
+      <!-- Top Nav -->
+      <header class="top-navbar">
+        <div class="top-left">
+          <button class="menu-toggle" aria-label="Toggle Menu">
+            <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+          </button>
+          <div class="global-search">
+            <i data-lucide="search" class="search-icon" style="width: 18px; height: 18px;"></i>
+            <input type="text" class="search-input" placeholder="Search...">
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme">
+            <span class="theme-icon-moon"><i data-lucide="moon" style="width: 18px; height: 18px;"></i></span>
+            <span class="theme-icon-sun" style="display: none;"><i data-lucide="sun" style="width: 18px; height: 18px;"></i></span>
+          </button>
+
+          <div class="dropdown-wrapper">
+            <button class="icon-btn" data-dropdown-toggle="notifications-menu" aria-label="Notifications">
+              <i data-lucide="bell" style="width: 18px; height: 18px;"></i>
+              <span class="icon-badge notif-badge"></span>
+            </button>
+            <div class="dropdown-menu notifications-menu" id="notifications-menu">
+              <div class="dropdown-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; font-size: 0.9rem;">Notifications</span>
+                <button class="btn btn-ghost btn-sm btn-mark-all-read" style="font-size: 0.72rem; padding: 2px 6px;">Mark all read</button>
+              </div>
+              <div class="notifications-list"></div>
+            </div>
+          </div>
+
+          <div class="dropdown-wrapper">
+            <button class="header-user-btn" data-dropdown-toggle="user-profile-menu">
+              <div class="avatar-wrapper" style="width: 32px; height: 32px;">
+                <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+              </div>
+              <span class="user-name-display" style="font-size: 0.88rem; font-weight: 600;">Sarah</span>
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px; color: var(--text-muted);"></i>
+            </button>
+            <div class="dropdown-menu" id="user-profile-menu">
+              <a href="profile.html" class="dropdown-item"><i data-lucide="user" style="width: 16px; height: 16px;"></i><span>My Profile</span></a>
+              <a href="settings.html" class="dropdown-item"><i data-lucide="settings" style="width: 16px; height: 16px;"></i><span>Settings</span></a>
+              <div style="border-top: 1px solid var(--border-color-subtle); margin: 4px 0;"></div>
+              <a href="#" class="dropdown-item danger btn-logout"><i data-lucide="log-out" style="width: 16px; height: 16px;"></i><span>Logout</span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Progress Main Area -->
+      <main class="content-area">
+        <div class="page-header">
+          <div class="page-title-group">
+            <h1>Internship Progress & Analytics</h1>
+            <p>Measure your completion velocity, submission consistency, and milestone badges.</p>
+          </div>
+        </div>
+
+        <!-- Overall Progress Hero Card -->
+        <div class="card" style="margin-bottom: var(--space-8); background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-surface-subtle) 100%);">
+          <div class="card-body" style="padding: var(--space-8);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;">
+              <div>
+                <span class="badge badge-low" style="margin-bottom: 8px;">Overall Progress</span>
+                <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--text-main);" id="progress-overall-percent">67%</h2>
+                <p style="max-width: 480px; margin-top: 4px;">
+                  You are tracking ahead of your 3-month curriculum schedule with positive peer reviews.
+                </p>
+              </div>
+
+              <!-- Metrics Quick Stats -->
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                <div style="background: var(--bg-surface); padding: 14px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                  <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-main);" id="progress-tasks-total">5</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Total Tasks</div>
+                </div>
+                <div style="background: var(--bg-surface); padding: 14px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                  <div style="font-size: 1.3rem; font-weight: 800; color: var(--success);" id="progress-tasks-completed">2</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Completed</div>
+                </div>
+                <div style="background: var(--bg-surface); padding: 14px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                  <div style="font-size: 1.3rem; font-weight: 800; color: var(--warning);" id="progress-tasks-pending">2</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Pending</div>
+                </div>
+                <div style="background: var(--bg-surface); padding: 14px 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center;">
+                  <div style="font-size: 1.3rem; font-weight: 800; color: var(--info);" id="progress-tasks-review">1</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">In Review</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar-container" style="height: 12px; margin-top: 24px;">
+              <div class="progress-bar-fill" id="progress-bar-fill" style="width: 67%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Split Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-8);" class="progress-charts-grid">
+          <!-- Weekly Activity Chart -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Weekly Task Velocity</h3>
+              <span class="badge badge-low">Assignments / Week</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">Number of tasks finished per sprint week:</p>
+              <div class="chart-container">
+                <svg id="progress-weekly-svg" class="svg-chart" viewBox="0 0 560 180"></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trend Line Chart -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Cumulative Evaluation Score Trend</h3>
+              <span class="badge badge-approved">Avg 9.35/10</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">Growth trajectory in reviewer evaluation scores:</p>
+              <div class="chart-container">
+                <svg id="progress-trend-svg" class="svg-chart" viewBox="0 0 500 160"></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gamified Achievements Section -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Internship Achievements & Badges</h3>
+              <p style="font-size: 0.85rem; margin-top: 2px;">Earn special badges for on-time submissions and high performance.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="achievements-grid" id="achievements-container">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SoftGrowTech Company Official Footer -->
+        <footer class="app-official-footer">
+          <div class="app-footer-left">
+            <div class="app-footer-brand">
+              <span style="font-weight: 800; color: var(--text-main);">SoftGrow<span style="color: var(--primary);">Tech</span></span>
+              <span class="app-footer-divider">•</span>
+              <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Learn • Build • Evolve</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+              Official Portal: <a href="https://www.softgrowtech.in/index.html" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">www.softgrowtech.in</a> &bull; MSME Registered
+            </p>
+          </div>
+          <div class="app-footer-links">
+            <a href="https://www.softgrowtech.in/internships.html" target="_blank" rel="noopener">Internships</a>
+            <a href="https://www.softgrowtech.in/projects.html" target="_blank" rel="noopener">Projects</a>
+            <a href="https://www.softgrowtech.in/documents-verification.html" target="_blank" rel="noopener">Verification</a>
+            <a href="https://www.instagram.com/softgrowtech_?igsh=aHd1bXdqMzRwY3Nx" target="_blank" rel="noopener" class="app-footer-social-icon" title="Instagram">
+              <i data-lucide="instagram" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/officialsoftgrowtech/" target="_blank" rel="noopener" class="app-footer-social-icon" title="LinkedIn">
+              <i data-lucide="linkedin" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="https://wa.me/917839686310" target="_blank" rel="noopener" class="app-footer-social-icon" title="WhatsApp (+91 7839686310)">
+              <i data-lucide="phone" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="mailto:info.softgrowtech@gmail.com" class="app-footer-social-icon" title="Email SoftGrowTech">
+              <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
+            </a>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>

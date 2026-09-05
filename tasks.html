@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Tasks — SoftGrowTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand-logo">
+          <div class="brand-icon">
+            <i data-lucide="layers" style="width: 20px; height: 20px;"></i>
+          </div>
+          <span>SoftGrowTech</span>
+          <span class="brand-tag">PRO</span>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div>
+          <div class="nav-group-title">Main Menu</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="tasks.html">
+                <i data-lucide="check-square" style="width: 18px; height: 18px;"></i>
+                <span>My Tasks</span>
+                <span class="nav-badge" id="sidebar-tasks-badge">5</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="submit.html">
+                <i data-lucide="upload-cloud" style="width: 18px; height: 18px;"></i>
+                <span>Submit Work</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="submissions.html">
+                <i data-lucide="folder-check" style="width: 18px; height: 18px;"></i>
+                <span>Submissions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="progress.html">
+                <i data-lucide="trending-up" style="width: 18px; height: 18px;"></i>
+                <span>Progress</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-group-title">Account</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="profile.html">
+                <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html">
+                <i data-lucide="settings" style="width: 18px; height: 18px;"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="btn-logout" style="color: var(--danger);">
+                <i data-lucide="log-out" style="width: 18px; height: 18px; color: var(--danger);"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-profile">
+          <div class="avatar-wrapper">
+            <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+            <span class="status-dot"></span>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name user-name-display">Sarah Ahmed</div>
+            <div class="profile-role user-role-display">Frontend Intern</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Top Navigation -->
+      <header class="top-navbar">
+        <div class="top-left">
+          <button class="menu-toggle" aria-label="Toggle Menu">
+            <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+          </button>
+          <div class="global-search">
+            <i data-lucide="search" class="search-icon" style="width: 18px; height: 18px;"></i>
+            <input type="text" class="search-input" placeholder="Search tasks...">
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme">
+            <span class="theme-icon-moon"><i data-lucide="moon" style="width: 18px; height: 18px;"></i></span>
+            <span class="theme-icon-sun" style="display: none;"><i data-lucide="sun" style="width: 18px; height: 18px;"></i></span>
+          </button>
+
+          <div class="dropdown-wrapper">
+            <button class="icon-btn" data-dropdown-toggle="notifications-menu" aria-label="Notifications">
+              <i data-lucide="bell" style="width: 18px; height: 18px;"></i>
+              <span class="icon-badge notif-badge"></span>
+            </button>
+            <div class="dropdown-menu notifications-menu" id="notifications-menu">
+              <div class="dropdown-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; font-size: 0.9rem;">Notifications</span>
+                <button class="btn btn-ghost btn-sm btn-mark-all-read" style="font-size: 0.72rem; padding: 2px 6px;">Mark all read</button>
+              </div>
+              <div class="notifications-list"></div>
+            </div>
+          </div>
+
+          <div class="dropdown-wrapper">
+            <button class="header-user-btn" data-dropdown-toggle="user-profile-menu">
+              <div class="avatar-wrapper" style="width: 32px; height: 32px;">
+                <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+              </div>
+              <span class="user-name-display" style="font-size: 0.88rem; font-weight: 600;">Sarah</span>
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px; color: var(--text-muted);"></i>
+            </button>
+            <div class="dropdown-menu" id="user-profile-menu">
+              <div class="dropdown-header">
+                <div class="user-name-display" style="font-weight: 700; font-size: 0.9rem;">Sarah Ahmed</div>
+                <div class="user-email-display" style="font-size: 0.75rem; color: var(--text-muted);">sarah.ahmed@example.com</div>
+              </div>
+              <a href="profile.html" class="dropdown-item"><i data-lucide="user" style="width: 16px; height: 16px;"></i><span>My Profile</span></a>
+              <a href="settings.html" class="dropdown-item"><i data-lucide="settings" style="width: 16px; height: 16px;"></i><span>Settings</span></a>
+              <div style="border-top: 1px solid var(--border-color-subtle); margin: 4px 0;"></div>
+              <a href="#" class="dropdown-item danger btn-logout"><i data-lucide="log-out" style="width: 16px; height: 16px;"></i><span>Logout</span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <main class="content-area">
+        <div class="page-header">
+          <div class="page-title-group">
+            <h1>My Assigned Tasks</h1>
+            <p>View, filter, and manage all internship tasks and deliverables.</p>
+          </div>
+          <div class="header-actions">
+            <a href="submit.html" class="btn btn-primary">
+              <i data-lucide="upload-cloud" style="width: 18px; height: 18px;"></i>
+              Submit Deliverable
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter & Search Bar Toolbar -->
+        <div class="card" style="margin-bottom: var(--space-6); padding: var(--space-4);">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+            <div style="display: flex; gap: 12px; flex: 1; min-width: 260px;">
+              <input type="text" id="task-search-input" class="form-input" placeholder="Search tasks by name or keyword..." style="max-width: 360px;">
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <select id="task-status-filter" class="form-select" style="width: auto; min-width: 140px;">
+                <option value="all">All Statuses</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+                <option value="in review">In Review</option>
+              </select>
+
+              <select id="task-priority-filter" class="form-select" style="width: auto; min-width: 140px;">
+                <option value="all">All Priorities</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+              </select>
+
+              <select id="task-sort-filter" class="form-select" style="width: auto; min-width: 140px;">
+                <option value="due-asc">Due Date (Earliest)</option>
+                <option value="due-desc">Due Date (Latest)</option>
+                <option value="title-asc">Title (A-Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+          <span id="tasks-count-display" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">Showing 5 of 5 tasks</span>
+        </div>
+
+        <!-- Dynamic Tasks Grid -->
+        <div id="tasks-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-6);">
+          <!-- Populated by js/tasks.js -->
+        </div>
+
+        <!-- SoftGrowTech Company Official Footer -->
+        <footer class="app-official-footer">
+          <div class="app-footer-left">
+            <div class="app-footer-brand">
+              <span style="font-weight: 800; color: var(--text-main);">SoftGrow<span style="color: var(--primary);">Tech</span></span>
+              <span class="app-footer-divider">•</span>
+              <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 500;">Learn • Build • Evolve</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">
+              Official Portal: <a href="https://www.softgrowtech.in/index.html" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">www.softgrowtech.in</a> &bull; MSME Registered
+            </p>
+          </div>
+          <div class="app-footer-links">
+            <a href="https://www.softgrowtech.in/internships.html" target="_blank" rel="noopener">Internships</a>
+            <a href="https://www.softgrowtech.in/projects.html" target="_blank" rel="noopener">Projects</a>
+            <a href="https://www.softgrowtech.in/documents-verification.html" target="_blank" rel="noopener">Verification</a>
+            <a href="https://www.instagram.com/softgrowtech_?igsh=aHd1bXdqMzRwY3Nx" target="_blank" rel="noopener" class="app-footer-social-icon" title="Instagram">
+              <i data-lucide="instagram" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/officialsoftgrowtech/" target="_blank" rel="noopener" class="app-footer-social-icon" title="LinkedIn">
+              <i data-lucide="linkedin" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="https://wa.me/917839686310" target="_blank" rel="noopener" class="app-footer-social-icon" title="WhatsApp (+91 7839686310)">
+              <i data-lucide="phone" style="width: 14px; height: 14px;"></i>
+            </a>
+            <a href="mailto:info.softgrowtech@gmail.com" class="app-footer-social-icon" title="Email SoftGrowTech">
+              <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
+            </a>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tasks.js"></script>
+</body>
+</html>

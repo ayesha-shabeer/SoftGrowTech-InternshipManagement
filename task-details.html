@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Details — SoftGrowTech</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="dashboard.html" class="brand-logo">
+          <div class="brand-icon">
+            <i data-lucide="layers" style="width: 20px; height: 20px;"></i>
+          </div>
+          <span>SoftGrowTech</span>
+          <span class="brand-tag">PRO</span>
+        </a>
+      </div>
+
+      <div class="sidebar-content">
+        <div>
+          <div class="nav-group-title">Main Menu</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="tasks.html">
+                <i data-lucide="check-square" style="width: 18px; height: 18px;"></i>
+                <span>My Tasks</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="submit.html">
+                <i data-lucide="upload-cloud" style="width: 18px; height: 18px;"></i>
+                <span>Submit Work</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="submissions.html">
+                <i data-lucide="folder-check" style="width: 18px; height: 18px;"></i>
+                <span>Submissions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="progress.html">
+                <i data-lucide="trending-up" style="width: 18px; height: 18px;"></i>
+                <span>Progress</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-group-title">Account</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="profile.html"><i data-lucide="user" style="width: 18px; height: 18px;"></i><span>Profile</span></a></li>
+            <li class="nav-item"><a href="settings.html"><i data-lucide="settings" style="width: 18px; height: 18px;"></i><span>Settings</span></a></li>
+            <li class="nav-item"><a href="#" class="btn-logout" style="color: var(--danger);"><i data-lucide="log-out" style="width: 18px; height: 18px; color: var(--danger);"></i><span>Logout</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="sidebar-profile">
+          <div class="avatar-wrapper">
+            <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+            <span class="status-dot"></span>
+          </div>
+          <div class="profile-info">
+            <div class="profile-name user-name-display">Sarah Ahmed</div>
+            <div class="profile-role user-role-display">Frontend Intern</div>
+          </div>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-layout">
+      <!-- Top Nav -->
+      <header class="top-navbar">
+        <div class="top-left">
+          <button class="menu-toggle" aria-label="Toggle Menu">
+            <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+          </button>
+          <a href="tasks.html" class="btn btn-ghost btn-sm" style="display: flex; align-items: center; gap: 6px;">
+            <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i>
+            <span>Back to Tasks</span>
+          </a>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-btn theme-toggle-btn" aria-label="Toggle Theme">
+            <span class="theme-icon-moon"><i data-lucide="moon" style="width: 18px; height: 18px;"></i></span>
+            <span class="theme-icon-sun" style="display: none;"><i data-lucide="sun" style="width: 18px; height: 18px;"></i></span>
+          </button>
+
+          <div class="dropdown-wrapper">
+            <button class="icon-btn" data-dropdown-toggle="notifications-menu" aria-label="Notifications">
+              <i data-lucide="bell" style="width: 18px; height: 18px;"></i>
+              <span class="icon-badge notif-badge"></span>
+            </button>
+            <div class="dropdown-menu notifications-menu" id="notifications-menu">
+              <div class="dropdown-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: 700; font-size: 0.9rem;">Notifications</span>
+                <button class="btn btn-ghost btn-sm btn-mark-all-read" style="font-size: 0.72rem; padding: 2px 6px;">Mark all read</button>
+              </div>
+              <div class="notifications-list"></div>
+            </div>
+          </div>
+
+          <div class="dropdown-wrapper">
+            <button class="header-user-btn" data-dropdown-toggle="user-profile-menu">
+              <div class="avatar-wrapper" style="width: 32px; height: 32px;">
+                <img class="avatar-img user-avatar-img" src="" alt="Avatar">
+              </div>
+              <span class="user-name-display" style="font-size: 0.88rem; font-weight: 600;">Sarah</span>
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px; color: var(--text-muted);"></i>
+            </button>
+            <div class="dropdown-menu" id="user-profile-menu">
+              <a href="profile.html" class="dropdown-item"><i data-lucide="user" style="width: 16px; height: 16px;"></i><span>My Profile</span></a>
+              <a href="settings.html" class="dropdown-item"><i data-lucide="settings" style="width: 16px; height: 16px;"></i><span>Settings</span></a>
+              <div style="border-top: 1px solid var(--border-color-subtle); margin: 4px 0;"></div>
+              <a href="#" class="dropdown-item danger btn-logout"><i data-lucide="log-out" style="width: 16px; height: 16px;"></i><span>Logout</span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="content-area">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-8);" class="task-details-grid">
+          <!-- Left Column: Task Overview & Requirements -->
+          <div>
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-low" id="task-detail-category">Engineering • Project</span>
+              <span id="task-detail-priority" class="badge badge-high">High Priority</span>
+              <span id="task-detail-status" class="badge badge-pending"><span class="badge-dot"></span> Pending</span>
+            </div>
+
+            <h1 id="task-detail-title" style="font-size: 2rem; margin-bottom: 16px;">Responsive Portfolio Website</h1>
+
+            <div class="card" style="margin-bottom: var(--space-6);">
+              <div class="card-header">
+                <h2 class="card-title">Overview & Objectives</h2>
+              </div>
+              <div class="card-body">
+                <p id="task-detail-desc" style="font-size: 1rem; line-height: 1.6; color: var(--text-main); margin-bottom: 24px;">
+                  Design and build a multi-page responsive personal portfolio using semantic HTML5, modern CSS3 Flexbox/Grid, and clean JavaScript.
+                </p>
+
+                <h3 style="font-size: 1.1rem; margin-bottom: 16px;">Core Requirements</h3>
+                <ul id="task-detail-requirements" style="list-style: none;">
+                  <!-- Populated by JS -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Submission Instructions</h2>
+              </div>
+              <div class="card-body">
+                <p id="task-detail-instructions" style="line-height: 1.6; color: var(--text-muted);">
+                  Create a clean repository on GitHub. Document all architectural decisions in the README. Include a live deployment link on Vercel or GitHub Pages.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Meta Info, Deadlines & CTA -->
+          <div>
+            <div class="card" style="position: sticky; top: calc(var(--topbar-height) + 24px);">
+              <div class="card-header">
+                <h3 class="card-title" style="font-size: 1rem;">Task Details</h3>
+              </div>
+              <div class="card-body" style="display: flex; flex-direction: column; gap: 20px;">
+                <div>
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Assigned Date</div>
+                  <div id="task-detail-assigned" style="font-weight: 600; color: var(--text-main); font-size: 0.95rem;">2026-06-05</div>
+                </div>
+
+                <div>
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Submission Deadline</div>
+                  <div id="task-detail-due" style="font-weight: 700; color: var(--danger); font-size: 1rem;">2026-06-18</div>
+                </div>
+
+                <div>
+                  <div style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Attached Resources</div>
+                  <div id="task-detail-resources">
+                    <!-- Populated by JS -->
+                  </div>
+                </div>
+
+                <div style="border-top: 1px solid var(--border-color-subtle); padding-top: 16px;">
+                  <a id="task-submit-cta-btn" href="submit.html" class="btn btn-primary btn-full btn-lg">
+                    <i data-lucide="upload-cloud" style="width: 18px; height: 18px;"></i>
+                    Submit Work for this Task
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/task-details.js"></script>
+</body>
+</html>
